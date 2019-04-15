@@ -1,5 +1,7 @@
-TypeScript AngularJS1 Webpack Demo
-==================================
+TypeScript AgGrid Demo
+======================
+
+纯DOM的AgGrid.
 
 ```
 npm install

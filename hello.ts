@@ -1,13 +1,38 @@
-import angular from 'angular';
+import {Grid, GridOptions} from "ag-grid-community";
 
-const app = angular.module('app', []);
+import "ag-grid-community/dist/styles/ag-grid.css";
+import "ag-grid-community/dist/styles/ag-theme-balham.css";
 
-app.directive('myDirective', function () {
-  return {
-    template: '<div class="bg-yellow">{{ message }}</div>',
-    controller: function ($scope) {
-      $scope.message = "Hello, angularjs"
-    },
-    restrict: 'A'
+class SimpleGrid {
+  private gridOptions: GridOptions = <GridOptions>{};
+
+  constructor() {
+    this.gridOptions = {
+      columnDefs: this.createColumnDefs(),
+      rowData: this.createRowData()
+    };
+
+    let eGridDiv:HTMLElement = <HTMLElement>document.querySelector('#myGrid');
+    new Grid(eGridDiv, this.gridOptions);
   }
-});
+
+  // specify the columns
+  private createColumnDefs() {
+    return [
+      {headerName: "Make", field: "make"},
+      {headerName: "Model", field: "model"},
+      {headerName: "Price", field: "price"}
+    ];
+  }
+
+  // specify the data
+  private createRowData() {
+    return [
+      {make: "Toyota", model: "Celica", price: 35000},
+      {make: "Ford", model: "Mondeo", price: 32000},
+      {make: "Porsche", model: "Boxter", price: 72000}
+    ];
+  }
+}
+
+new SimpleGrid();
