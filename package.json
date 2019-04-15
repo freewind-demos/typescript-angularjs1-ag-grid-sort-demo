@@ -3,7 +3,9 @@
     "demo": "webpack-dev-server --open"
   },
   "dependencies": {
-    "ag-grid-community": "20.2.0"
+    "@types/angular": "1.6.54",
+    "ag-grid-community": "20.2.0",
+    "angular": "1.7.7"
   },
   "devDependencies": {
     "css-loader": "2.1.1",

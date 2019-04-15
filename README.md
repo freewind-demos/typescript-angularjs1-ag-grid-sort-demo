@@ -1,7 +1,5 @@
-TypeScript AgGrid Demo
+TypeScript AngularJS1 AgGrid Demo
 ======================
-
-纯DOM的AgGrid.
 
 ```
 npm install
