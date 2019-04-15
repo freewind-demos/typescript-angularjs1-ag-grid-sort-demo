@@ -7,20 +7,19 @@ import "ag-grid-community/dist/styles/ag-theme-balham.css";
 initialiseAgGridWithAngular1(angular);
 
 function createGridOptions(): GridOptions {
-  const columnDefs = [
-    {headerName: "Make", field: "make"},
-    {headerName: "Model", field: "model"},
-    {headerName: "Price", field: "price"}
-  ];
-
-  const rowData = [
-    {make: "Toyota", model: "Celica", price: 35000},
-    {make: "Ford", model: "Mondeo", price: 32000},
-    {make: "Porsche", model: "Boxter", price: 72000}
-  ];
   return {
-    columnDefs: columnDefs,
-    rowData: rowData
+    columnDefs: [
+      {headerName: "Make", field: "make", sortingOrder: ['desc', 'asc']},
+      {headerName: "Model", field: "model", sortable: false},
+      {headerName: "Price", field: "price", comparator: (a, b) => a - b}
+    ],
+    rowData: [
+      {make: "Toyota", model: "Celica", price: 35000},
+      {make: "Ford", model: "Mondeo", price: 32000},
+      {make: "Porsche", model: "Boxter", price: 72000}
+    ],
+    enableSorting: true,
+    animateRows: true
   }
 }
 

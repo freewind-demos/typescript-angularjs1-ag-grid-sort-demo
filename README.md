@@ -1,5 +1,5 @@
-TypeScript AngularJS1 AgGrid Demo
-======================
+TypeScript AngularJS1 AgGrid Sort Demo
+======================================
 
 ```
 npm install
